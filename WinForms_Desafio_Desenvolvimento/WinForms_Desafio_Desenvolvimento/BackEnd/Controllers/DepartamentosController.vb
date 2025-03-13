@@ -65,16 +65,39 @@ Public Class DepartamentosController
     End Function
 
     Public Shared Function ExcluirDepartamento(ByVal idDepartamento As Integer) As Boolean
+        If VerificarChamadosVinculadosAoDepartamento(idDepartamento) Then
+            Utils.ExibirMensagem("Não é possível excluir o departamento, pois há chamados vinculados a ele.",
+                                 TipoMensagem.Erro)
+            Return False
+        End If
+
         Dim regsAfetados As Integer = -1
         Dim parametros As New List(Of SQLiteParameter) From {
-            New SQLiteParameter("@ID", idDepartamento)
-        }
+        New SQLiteParameter("@ID", idDepartamento)
+    }
 
         Using dbConnection As New DbConnection()
             regsAfetados = dbConnection.ExecutarComando(TipoComandoSQL.Delete, "departamentos", parametros)
         End Using
 
-        Return (regsAfetados > 0)
+        If regsAfetados > 0 Then
+            Utils.ExibirMensagem("Departamento excluído com sucesso.", TipoMensagem.Sucesso)
+            Return True
+        Else
+            Utils.ExibirMensagem("Erro ao excluir o departamento.", TipoMensagem.Erro)
+            Return False
+        End If
+    End Function
+
+    Private Shared Function VerificarChamadosVinculadosAoDepartamento(ByVal idDepartamento As Integer) As Boolean
+        Dim departamento = ObterDepartamento(idDepartamento)
+        If departamento Is Nothing Then
+            Return True
+        End If
+
+        Dim chamados As List(Of Chamado) = ChamadosController.ListarChamados()
+
+        Return chamados.Any(Function(c) c.Departamento = departamento.Descricao)
     End Function
 
     Private Shared Function VerificarDepartamentosDuplicados(descricao As String) As Boolean
