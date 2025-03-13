@@ -45,6 +45,7 @@ Partial Class frmChamadosListar
         Me.dgvChamados.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvChamados.Location = New System.Drawing.Point(3, 43)
         Me.dgvChamados.Name = "dgvChamados"
+        Me.dgvChamados.ReadOnly = True
         Me.dgvChamados.RowHeadersVisible = False
         Me.dgvChamados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvChamados.Size = New System.Drawing.Size(778, 415)
@@ -133,7 +134,7 @@ Partial Class frmChamadosListar
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frmChamadosListar"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Netspeed - Desafio Desenvolvimento"
         CType(Me.dgvChamados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tlpLayoutRoot.ResumeLayout(False)

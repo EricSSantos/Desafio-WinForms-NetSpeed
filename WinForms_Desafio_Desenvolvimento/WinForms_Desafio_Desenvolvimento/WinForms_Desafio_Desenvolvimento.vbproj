@@ -103,7 +103,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackEnd\clsDados.vb" />
+    <Compile Include="BackEnd\Controllers\ChamadosController.vb" />
+    <Compile Include="BackEnd\Controllers\DepartamentosController.vb" />
+    <Compile Include="BackEnd\Context\DbConnection.vb" />
+    <Compile Include="BackEnd\Entities\Chamado.vb" />
+    <Compile Include="BackEnd\Entities\Departamento.vb" />
     <Compile Include="Formularios\Chamados\frmChamadosEditar.Designer.vb">
       <DependentUpon>frmChamadosEditar.vb</DependentUpon>
     </Compile>
@@ -121,6 +125,12 @@
       <DependentUpon>frmChamadosRelatorio.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Chamados\frmChamadosRelatorio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Departamentos\frmDepartamentosEditar.Designer.vb">
+      <DependentUpon>frmDepartamentosEditar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Departamentos\frmDepartamentosEditar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Departamentos\frmDepartamentosListar.Designer.vb">
@@ -167,6 +177,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsDepartamentos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Enums\TipoMensagem.vb" />
+    <Compile Include="Utils\Enums\TipoComandoSQL.vb" />
+    <Compile Include="Utils\Utils.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Formularios\Chamados\frmChamadosEditar.resx">
@@ -177,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Chamados\frmChamadosRelatorio.resx">
       <DependentUpon>frmChamadosRelatorio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Departamentos\frmDepartamentosEditar.resx">
+      <DependentUpon>frmDepartamentosEditar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Departamentos\frmDepartamentosListar.resx">
       <DependentUpon>frmDepartamentosListar.vb</DependentUpon>
@@ -255,5 +271,6 @@
     </Content>
     <Content Include="Netspeed.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -45,6 +45,7 @@ Partial Class frmDepartamentosListar
         Me.dgvDepartamentos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvDepartamentos.Location = New System.Drawing.Point(3, 43)
         Me.dgvDepartamentos.Name = "dgvDepartamentos"
+        Me.dgvDepartamentos.ReadOnly = True
         Me.dgvDepartamentos.RowHeadersVisible = False
         Me.dgvDepartamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvDepartamentos.Size = New System.Drawing.Size(778, 415)
@@ -133,7 +134,7 @@ Partial Class frmDepartamentosListar
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frmDepartamentosListar"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Netspeed - Desafio Desenvolvimento"
         CType(Me.dgvDepartamentos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tlpLayoutRoot.ResumeLayout(False)

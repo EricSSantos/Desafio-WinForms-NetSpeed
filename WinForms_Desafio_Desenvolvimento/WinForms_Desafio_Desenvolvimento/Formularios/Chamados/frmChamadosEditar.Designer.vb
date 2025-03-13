@@ -134,6 +134,7 @@ Partial Class frmChamadosEditar
         '
         Me.txtAssunto.Location = New System.Drawing.Point(123, 50)
         Me.txtAssunto.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
+        Me.txtAssunto.MaxLength = 100
         Me.txtAssunto.Name = "txtAssunto"
         Me.txtAssunto.Size = New System.Drawing.Size(378, 20)
         Me.txtAssunto.TabIndex = 3
@@ -142,6 +143,7 @@ Partial Class frmChamadosEditar
         '
         Me.txtSolicitante.Location = New System.Drawing.Point(123, 90)
         Me.txtSolicitante.Margin = New System.Windows.Forms.Padding(3, 10, 3, 3)
+        Me.txtSolicitante.MaxLength = 50
         Me.txtSolicitante.Name = "txtSolicitante"
         Me.txtSolicitante.Size = New System.Drawing.Size(378, 20)
         Me.txtSolicitante.TabIndex = 5
@@ -191,7 +193,7 @@ Partial Class frmChamadosEditar
         Me.btnFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnFechar.UseVisualStyleBackColor = True
         '
-        'frmChamado
+        'frmChamadosEditar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -201,7 +203,7 @@ Partial Class frmChamadosEditar
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "frmChamado"
+        Me.Name = "frmChamadosEditar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Netspeed - Desafio Desenvolvimento"
         Me.tlpLayoutRoot.ResumeLayout(False)
